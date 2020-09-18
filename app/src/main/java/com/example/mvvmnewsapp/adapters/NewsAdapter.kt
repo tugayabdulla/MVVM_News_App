@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmnewsapp.R
 import com.example.mvvmnewsapp.models.ArticlesItem
+import com.example.mvvmnewsapp.util.Helper
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_article_preview.view.*
 
@@ -16,6 +17,8 @@ import kotlinx.android.synthetic.main.item_article_preview.view.*
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
 class NewsAdapter : RecyclerView.Adapter<ViewHolder>() {
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_article_preview, parent, false)
@@ -41,7 +44,13 @@ class NewsAdapter : RecyclerView.Adapter<ViewHolder>() {
             tvSource.text = article.source!!.name
             tvTitle.text = article.title
             tvDescription.text = article.description
-            tvPublishedAt.text = article.publishedAt
+
+
+            Helper.setDate(article.publishedAt!!)
+
+            tvPublishedAtDate.text = Helper.getDate()
+            tvPublishedAtTime.text = Helper.getTime()
+
 
             setOnClickListener {
                 onItemClickListener?.let { it(article) }

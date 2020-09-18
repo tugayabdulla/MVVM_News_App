@@ -12,7 +12,6 @@ import com.example.mvvmnewsapp.R
 import com.example.mvvmnewsapp.adapters.NewsAdapter
 import com.example.mvvmnewsapp.ui.NewsActivity
 import com.example.mvvmnewsapp.ui.NewsViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_saved_news.*

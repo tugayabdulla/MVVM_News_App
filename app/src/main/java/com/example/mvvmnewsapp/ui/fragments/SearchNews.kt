@@ -220,7 +220,7 @@ class SearchNews : Fragment(R.layout.fragment_search_news) {
     private fun setDate(view: View) {
 
         val et = view as EditText
-        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
         val cal = Calendar.getInstance()
 

@@ -21,8 +21,8 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
         (activity as NewsActivity).setBNVVisible(false)
-        (activity as NewsActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true);
-           //  activity.supportActionBar?
+        (activity as NewsActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //  activity.supportActionBar?
 
 
         val article = args.article
