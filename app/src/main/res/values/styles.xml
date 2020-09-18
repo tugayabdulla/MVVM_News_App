@@ -1,0 +1,27 @@
+<resources>
+    <!-- Base application theme. -->
+
+
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
+
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorControlNormal">#FFF</item>
+        <item name="android:textColorSecondary">#FFF</item>
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="bottomNavigationStyle">@style/ThemeOverlay.AppCompat</item>
+
+    </style>
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:colorControlNormal">#FFF</item>
+        <item name="android:textColorSecondary">#FFF</item>
+
+    </style>
+
+
+
+</resources>
