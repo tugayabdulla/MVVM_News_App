@@ -71,6 +71,13 @@ class SearchNews : Fragment(R.layout.fragment_search_news) {
 
                     response.data?.let { newsResponse ->
                         newsAdapter.differ.submitList(newsResponse.articles)
+                        if (newsResponse.articles.size == 0) {
+                            Toast.makeText(
+                                activity,
+                                "No news found for keyword: $lastQuery, please be more specific",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                         val totalPages = newsResponse.totalResults / Constants.QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.searchNewsPage == totalPages
                         Log.d(TAG, "Total results: ${newsResponse.totalResults}")
@@ -257,17 +264,17 @@ class SearchNews : Fragment(R.layout.fragment_search_news) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.Filter) {
-            if (filterFlag){
+            if (filterFlag) {
                 item.title = "Filter"
                 Filter.visibility = View.GONE
                 etTo.setText("")
                 etFrom.setText("")
-            }else{
+            } else {
                 item.title = "Remove Filter"
                 Filter.visibility = View.VISIBLE
             }
 
-            filterFlag=!filterFlag
+            filterFlag = !filterFlag
         }
         return super.onOptionsItemSelected(item)
     }
