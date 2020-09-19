@@ -24,14 +24,15 @@ class NewsViewModel(
     app: Application,
     private val newsRepository: NewsRepository
 ) : AndroidViewModel(app) {
-    val breakingNews: MutableLiveData<Resource<NewsResponse>> =
-        MutableLiveData()
+
+
+    val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var breakingNewsPage = 1
     private var breakingNewsResponse: NewsResponse? = null
 
     private var lastSearchQuery = ""
-    val searchNews: MutableLiveData<Resource<NewsResponse>> =
-        MutableLiveData()
+
+    val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var searchNewsPage = 1
     private var searchNewsResponse: NewsResponse? = null
 
@@ -40,21 +41,16 @@ class NewsViewModel(
         getBreakingNews("us")
     }
 
-
     fun getBreakingNews(countryCode: String) =
         viewModelScope.launch { safeBreakingNewsCall(countryCode) }
-
 
     fun getSearchNews(searchQuery: String, from: String, to: String) {
         if (searchQuery != lastSearchQuery) {
             viewModelScope.launch {
-                if (searchQuery == "") {
-                    safeSearchNewsCall(lastSearchQuery, from, to)
-                } else {
-                    safeSearchNewsCall(searchQuery, from, to)
+                if (searchQuery != "") {
                     lastSearchQuery = searchQuery
-
                 }
+                safeSearchNewsCall(lastSearchQuery, from, to)
             }
         }
 
