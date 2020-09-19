@@ -8,9 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmnewsapp.R
-import com.example.mvvmnewsapp.adapters.NewsAdapter
 
-class TouchHelper(val adapter: NewsAdapter, val listener: OnSwipeListener) :
+class TouchHelper(private val listener: OnSwipeListener) :
     ItemTouchHelper.SimpleCallback(
         0,
         ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT

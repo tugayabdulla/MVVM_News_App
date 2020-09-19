@@ -29,7 +29,7 @@ class NewsViewModel(
     var breakingNewsPage = 1
     private var breakingNewsResponse: NewsResponse? = null
 
-    var lastSearchQuery = ""
+    private var lastSearchQuery = ""
     val searchNews: MutableLiveData<Resource<NewsResponse>> =
         MutableLiveData()
     var searchNewsPage = 1

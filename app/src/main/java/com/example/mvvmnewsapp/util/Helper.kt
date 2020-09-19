@@ -9,7 +9,7 @@ object Helper {
     private val time = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
     private val date = SimpleDateFormat("dd MMM, yyyy", Locale.getDefault())
 
-    lateinit var dateObject: Date
+    private lateinit var dateObject: Date
     fun setDate(text: String) {
 
         dateObject = sdfIn.parse(text.substring(0, text.lastIndex - 1))!!

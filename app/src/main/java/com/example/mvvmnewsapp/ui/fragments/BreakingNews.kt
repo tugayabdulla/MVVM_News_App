@@ -16,8 +16,6 @@ import com.example.mvvmnewsapp.util.Constants.QUERY_PAGE_SIZE
 import com.example.mvvmnewsapp.util.Resource
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 
-private const val TAG = "Breaking News"
-
 class BreakingNews : Fragment(R.layout.fragment_breaking_news) {
     lateinit var viewModel: NewsViewModel
     private lateinit var newsAdapter: NewsAdapter

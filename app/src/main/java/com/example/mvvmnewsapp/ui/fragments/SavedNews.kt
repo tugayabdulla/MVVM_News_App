@@ -19,8 +19,8 @@ import kotlinx.android.synthetic.main.fragment_saved_news.*
 
 
 class SavedNews : Fragment(R.layout.fragment_saved_news), TouchHelper.OnSwipeListener {
-    lateinit var viewModel: NewsViewModel
-    lateinit var newsAdapter: NewsAdapter
+    private lateinit var viewModel: NewsViewModel
+    private lateinit var newsAdapter: NewsAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = (activity as NewsActivity).viewModel
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +40,7 @@ class SavedNews : Fragment(R.layout.fragment_saved_news), TouchHelper.OnSwipeLis
             newsAdapter.differ.submitList(it)
         })
 
-        val itemTouchHelper = TouchHelper(newsAdapter, this)
+        val itemTouchHelper = TouchHelper(this)
         ItemTouchHelper(itemTouchHelper).attachToRecyclerView(rvSavedNews)
 
     }
