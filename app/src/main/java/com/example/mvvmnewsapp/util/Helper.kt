@@ -21,8 +21,6 @@ object Helper {
 
     fun getTime(): String {
         return time.format(dateObject)
-
-
     }
 
 }
